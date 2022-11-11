@@ -80,14 +80,14 @@ func (r CreateRequest) Do(ctx context.Context, transport Transport) (*Response, 
 		params map[string]string
 	)
 
-	method = "PUT"
+	method = "POST"
 
 	path.Grow(7 + 1 + len(r.Index) + 1 + len("_create") + 1 + len(r.DocumentID))
 	path.WriteString("http://")
 	path.WriteString("/")
 	path.WriteString(r.Index)
 	path.WriteString("/")
-	path.WriteString("_create")
+	path.WriteString("_doc")
 	path.WriteString("/")
 	path.WriteString(r.DocumentID)
 
